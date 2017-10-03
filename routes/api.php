@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/contactUs', 'Api\ContactController@submitContactForm');
+Route::post('/inquiry', 'Api\InquiryController@saveInquiry');
