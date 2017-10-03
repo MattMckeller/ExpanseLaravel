@@ -76,7 +76,7 @@ class InquiryController extends Controller
 
     private function savePhone(Request $request){
         $phone = new PhoneNumber();
-        $phone->phoneNumber = $request->input("phone");
+        $phone->phoneNumber = $request->input("phoneNumber");
         $phone->is_active = $request->input("isActive", 1);
         $phone->is_primary = $request->input("isPrimary", 1);
         $phone->save();
@@ -85,7 +85,7 @@ class InquiryController extends Controller
 
     private function saveEmail(Request $request){
         $email = new EmailAddress();
-        $email->emailAddress = $request->input("email");
+        $email->emailAddress = $request->input("emailAddress");
         $email->is_active = $request->input("isActive", 1);
         $email->is_primary = $request->input("isPrimary", 1);
         $email->save();
