@@ -5,12 +5,13 @@
   flex-direction: row;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
-  color: #f5f5f5;
+  color: $footer-text-color;
   float: left;
   height:3em;
 }
+
 .social-media-link{
   margin: 1em;
-  color: #f5f5f5;
+  color: $footer-text-color;
   text-decoration: none;
 }
