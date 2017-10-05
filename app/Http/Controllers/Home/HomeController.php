@@ -14,7 +14,8 @@ class HomeController extends Controller
     }
 
     public function index() {
-        return view('pages/landing');
+        return "nope.avi";
+//        return view('pages/landing');
     }
 
 }
