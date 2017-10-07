@@ -23,6 +23,12 @@ class CartController extends ApiController
     );
 
     /**
+     * Get current products in a customers cart
+     * @param Request $request
+     */
+    function getProducts(Request $request){}
+
+    /**
      * Add a product to a customers cart
      * @param Request $request
      */
