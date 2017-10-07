@@ -5,7 +5,7 @@ namespace App\Models\Ecommerce;
 use App\Models\Customers\Customer;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductImages extends Model
+class ProductImage extends Model
 {
     public $table = 'product_images';
     public $timestamps = true;
@@ -19,10 +19,10 @@ class ProductImages extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      **/
-    public function orders()
+    public function product()
     {
-        return $this->hasMany(Order::class);
+        return $this->hasOne(Product::class);
     }
 }
