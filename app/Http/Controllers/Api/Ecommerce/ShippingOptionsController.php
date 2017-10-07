@@ -3,54 +3,53 @@
 namespace App\Http\Controllers\Api;
 
 use App\Events\NewInquiryEvent;
+
 use App\Models\Customers\Address;
 use App\Models\Customers\Customer;
 use App\Models\Customers\EmailAddress;
 use App\Models\Customers\PhoneNumber;
-use App\Models\Ecommerce\ProductImage;
+use App\Models\Ecommerce\ShippingOption;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\Api\ApiController;
 
-class ProductController extends ApiController
+class ShippingOptionsController extends ApiController
 {
     function __construct(){
-
     }
 
     private $rules = array(
     );
 
     /**
-     * Add a new product to the database
+     * Retrieve all existing shipping options
      * @param Request $request
      */
-    function createNewProduct(Request $request){}
+    function getShippingOptions(Request $request){}
 
     /**
-     * Edit an existing product
-     * @param Request $request
+     * Retrieve a single shipping option
+     * @param ShippingOption $shippingOption
      */
-    function editProduct(Request $request){}
+    function getShippingOption(ShippingOption $shippingOption){}
 
     /**
-     * Soft delete an existing product
+     * Add a new shipping option
      * @param Request $request
      */
-    function removeProduct(Request $request){}
+    function addOption(Request $request){}
 
     /**
-     * Set an existing image as the primary image for a product.
+     * Remove a shipping option
      * @param Request $request
      */
-    function setPrimaryImage(Request $request){}
+    function removeOption(Request $request){}
 
     /**
-     * Update the order in which the product images appear for a product.
+     * Edit a shipping option
      * @param Request $request
      */
-    function updateImageOrder(Request $request){}
-
+    function editOption(Request $request){}
 }

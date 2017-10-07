@@ -3,54 +3,56 @@
 namespace App\Http\Controllers\Api;
 
 use App\Events\NewInquiryEvent;
+
 use App\Models\Customers\Address;
 use App\Models\Customers\Customer;
 use App\Models\Customers\EmailAddress;
 use App\Models\Customers\PhoneNumber;
-use App\Models\Ecommerce\ProductImage;
+use App\Models\Ecommerce\PaymentType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\Api\ApiController;
 
-class ProductController extends ApiController
+class PaymentTypesController extends ApiController
 {
     function __construct(){
-
     }
 
     private $rules = array(
     );
 
     /**
-     * Add a new product to the database
-     * @param Request $request
+     * Retrieve a single payment type instance
+     * @param PaymentType $paymentType
      */
-    function createNewProduct(Request $request){}
+    function getPaymentType(PaymentType $paymentType){}
 
     /**
-     * Edit an existing product
+     * Retrieve all existing payment types
      * @param Request $request
      */
-    function editProduct(Request $request){}
+    function getPaymentTypes(Request $request){}
 
     /**
-     * Soft delete an existing product
+     * Add a new payment type
      * @param Request $request
      */
-    function removeProduct(Request $request){}
+    function addPaymentType(Request $request){}
 
     /**
-     * Set an existing image as the primary image for a product.
+     * Remove an existing payment type
      * @param Request $request
      */
-    function setPrimaryImage(Request $request){}
+    function removePaymentType(Request $request){}
 
     /**
-     * Update the order in which the product images appear for a product.
+     * Edit a shipping option
      * @param Request $request
      */
-    function updateImageOrder(Request $request){}
+    function editPaymentType(Request $request){}
+
+
 
 }
