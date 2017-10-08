@@ -15,7 +15,8 @@ class ShippingOption extends Model
 
 
     public $fillable = [
-        'name'
+        'name',
+        'cost'
     ];
 
     /**
