@@ -49,7 +49,7 @@ class ShippingOptionsController extends ApiController
 
     /**
      * Edit a shipping option
-     * @param Request $request
+     * @param ShippingOption $option
      */
-    function editOption(Request $request){}
+    function editOption(ShippingOption $option){}
 }
