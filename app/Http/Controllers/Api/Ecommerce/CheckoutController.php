@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Ecommerce;
 
 use App\Events\NewInquiryEvent;
+use App\Http\Controllers\Controller;
 use App\Models\Customers\Address;
 use App\Models\Customers\Customer;
 use App\Models\Customers\EmailAddress;
@@ -13,16 +14,13 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\Api\ApiController;
 
-class CheckoutController extends ApiController
+class CheckoutController extends Controller
 {
-    function __construct(){
+    public function index(){
+
     }
 
-    private $rules = array(
-    );
-
-    function checkout(Request $request) {
+    public function checkout(Request $request) {
         pretty_print_r($request->all());
     }
-
 }
