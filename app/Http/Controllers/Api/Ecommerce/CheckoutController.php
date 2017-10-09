@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Ecommerce;
 
 use App\Events\NewInquiryEvent;
 use App\Models\Customers\Address;
@@ -21,8 +21,8 @@ class CheckoutController extends ApiController
     private $rules = array(
     );
 
-    function checkout(){
-
+    function checkout(Request $request) {
+        pretty_print_r($request->all());
     }
 
 }

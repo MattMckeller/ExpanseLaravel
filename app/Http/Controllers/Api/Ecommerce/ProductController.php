@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Ecommerce;
 
 use App\Events\NewInquiryEvent;
 use App\Models\Customers\Address;

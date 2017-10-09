@@ -19,6 +19,7 @@ Route::post('/inquiry', 'Api\InquiryController@saveInquiry');
 
 //Checkout
 Route::post('/checkout', 'Api\Ecommerce\CartController@checkout');
+Route::post('/checkout/submit', 'Api\Ecommerce\CartController@checkout');
 
 
 /** Restful Model Mapping Controllers **/
