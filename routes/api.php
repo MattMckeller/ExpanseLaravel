@@ -18,8 +18,8 @@ Route::post('/contactUs', 'Api\ContactController@submitContactForm');
 Route::post('/inquiry', 'Api\InquiryController@saveInquiry');
 
 //Checkout
-Route::post('/checkout', 'Api\Ecommerce\CartController@checkout');
-Route::post('/checkout/submit', 'Api\Ecommerce\CartController@checkout');
+Route::post('/checkout', 'Api\Ecommerce\CheckoutController@checkout');
+Route::post('/checkout/submit', 'Api\Ecommerce\CheckoutController@checkout');
 
 
 /** Restful Model Mapping Controllers **/
