@@ -27,13 +27,31 @@ class ShippingOptionsController extends ApiController
      * Retrieve all existing shipping options
      * @param Request $request
      */
-    function getShippingOptions(Request $request){}
+    function getOptions(Request $request){
+        return Response(
+            [
+                [
+                    'text'=>'Pickup - free',
+                    'cost'=> 0
+                ],
+                [
+                    'text'=>'Standard - 10$',
+                    'cost'=> 10
+                ],
+                [
+                    'text'=>'Premium - 20$',
+                    'cost'=> 20
+                ]
+            ],
+            200
+        );
+    }
 
     /**
      * Retrieve a single shipping option
      * @param ShippingOption $shippingOption
      */
-    function getShippingOption(ShippingOption $shippingOption){}
+    function getOption(ShippingOption $shippingOption){}
 
     /**
      * Add a new shipping option

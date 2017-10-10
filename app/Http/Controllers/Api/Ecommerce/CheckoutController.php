@@ -21,6 +21,10 @@ class CheckoutController extends Controller
     }
 
     public function checkout(Request $request) {
+//        $allInput = $request->all();
+//        Mail::to('mattmckeller@gmail.com')->send(
+//            $allInput
+//        );
         pretty_print_r($request->all());
         $inputData = $request->all();
         \Stripe\Stripe::setApiKey(config('stripe.apiKey'));
