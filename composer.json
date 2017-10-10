@@ -13,7 +13,8 @@
         "symfony/polyfill-iconv": "^1.4",
         "guzzlehttp/guzzle": "^6.3",
         "thetwelvelabs/foursquare": "0.2.*",
-        "haxx-se/curl": "1.0.0"
+        "haxx-se/curl": "1.0.0",
+        "stripe/stripe-php": "^5.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
