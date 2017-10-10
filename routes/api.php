@@ -51,8 +51,8 @@ Route::delete('/productImages/removeImage/{ProductImage}', 'Api\Ecommerce\Produc
 Route::post('/productImages/editImage', 'Api\Ecommerce\ProductImageController@editImage');
 
 //Shipping Options
-Route::get('/getOption/{ShippingOption}', 'Api\Ecommerce\ShippingOptionsController@getOption');
-Route::get('/getOptions', 'Api\Ecommerce\ShippingOptionsController@getOptions');
-Route::post('/addOption', 'Api\Ecommerce\ShippingOptionsController@addOption');
-Route::post('/editOption/{ShippingOption}', 'Api\Ecommerce\ShippingOptionsController@editOption');
-Route::delete('/removeOption', 'Api\Ecommerce\ShippingOptionsController@removeOption');
+Route::get('/shipping/getOption/{ShippingOption}', 'Api\Ecommerce\ShippingOptionsController@getOption');
+Route::get('/shipping/getOptions', 'Api\Ecommerce\ShippingOptionsController@getOptions');
+Route::post('/shipping/addOption', 'Api\Ecommerce\ShippingOptionsController@addOption');
+Route::post('/shipping/editOption/{ShippingOption}', 'Api\Ecommerce\ShippingOptionsController@editOption');
+Route::delete('/shipping/removeOption', 'Api\Ecommerce\ShippingOptionsController@removeOption');
