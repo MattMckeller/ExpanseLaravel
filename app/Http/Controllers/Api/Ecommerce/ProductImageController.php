@@ -7,6 +7,7 @@ use App\Models\Customers\Address;
 use App\Models\Customers\Customer;
 use App\Models\Customers\EmailAddress;
 use App\Models\Customers\PhoneNumber;
+use App\Models\Ecommerce\Product;
 use App\Models\Ecommerce\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -24,10 +25,31 @@ class ProductImageController extends ApiController
     );
 
     /**
+     * Returns the requested image from storage
+     * @param Request $request
+     * @return file
+     */
+    function getImage(Request $request){
+        $requestedImage = $request->input('image');
+        $productImage = new ProductImage();
+        $productImage = $productImage->where('image', $requestedImage)->first();
+        //todo actually return the image not the object
+        return $productImage;
+    }
+
+    /**
      * Creates a new image and adds it to a product.
      * @param Request $request -- Image upload data, image name, product to associate image with
+     * @return ProductImage
      */
-    function addNewImage(Request $request){}
+    function addImage(Request $request){
+        $path = $request->file->store('productImages');
+        $productImage = new ProductImage([
+            'image'=>$path
+        ]);
+        $productImage->save();
+        return $productImage;
+    }
 
     /**
      * Removes an image from a product
