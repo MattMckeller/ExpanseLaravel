@@ -15,7 +15,7 @@ use App\Models\Customers\Address;
  */
 class Place extends Model
 {
-    public $table = 'Places';
+    public $table = 'places';
     public $timestamps = true;
 
     const CREATED_AT = 'created_at';

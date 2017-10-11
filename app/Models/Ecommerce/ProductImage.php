@@ -15,7 +15,7 @@ class ProductImage extends Model
 
 
     public $fillable = [
-        'href'
+        'image'
     ];
 
     /**
