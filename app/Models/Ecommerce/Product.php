@@ -17,6 +17,7 @@ class Product extends Model
     public $fillable = [
         'tag',
         'name',
+        'price',
         'description',
         'quantity_available',
         'display'
