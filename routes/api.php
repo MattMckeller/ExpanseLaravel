@@ -37,13 +37,13 @@ Route::post('/paymentTypes/editPaymentType', 'Api\Ecommerce\PaymentTypesControll
 Route::delete('/paymentTypes/removePaymentType', 'Api\Ecommerce\PaymentTypesController@removePaymentType');
 
 //Products
-Route::get('/products/getProduct/{Product}', 'Api\Ecommerce\ProductsController@getProduct');
-Route::get('/products/getProducts', 'Api\Ecommerce\ProductsController@getProducts');
-Route::post('/products/createProduct', 'Api\Ecommerce\ProductsController@createProduct');
-Route::post('/products/editProduct/{Product}', 'Api\Ecommerce\ProductsController@editProduct');
-Route::delete('/products/removeProduct/{Product}', 'Api\Ecommerce\ProductsController@removeProduct');
-Route::post('/products/setPrimaryImage', 'Api\Ecommerce\ProductsController@setPrimaryImage');
-Route::post('/products/updateImageOrder', 'Api\Ecommerce\ProductsController@updateImageOrder');
+Route::get('/products/getProduct/{Product}', 'Api\Ecommerce\ProductController@getProduct');
+Route::get('/products/getProducts', 'Api\Ecommerce\ProductController@getProducts');
+Route::post('/products/createProduct', 'Api\Ecommerce\ProductController@createProduct');
+Route::post('/products/editProduct/{Product}', 'Api\Ecommerce\ProductController@editProduct');
+Route::delete('/products/removeProduct/{Product}', 'Api\Ecommerce\ProductController@removeProduct');
+Route::post('/products/setPrimaryImage', 'Api\Ecommerce\ProductController@setPrimaryImage');
+Route::post('/products/updateImageOrder', 'Api\Ecommerce\ProductController@updateImageOrder');
 
 //Product Images
 Route::get('/productImages/getImage', 'Api\Ecommerce\ProductImageController@getImage');
