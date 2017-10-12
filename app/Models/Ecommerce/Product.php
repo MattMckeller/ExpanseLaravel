@@ -23,6 +23,10 @@ class Product extends Model
         'display'
     ];
 
+    function loadCommon(){
+        $this->load('productImages');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/

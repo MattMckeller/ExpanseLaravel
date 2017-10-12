@@ -29,13 +29,21 @@ class ProductController extends ApiController
      * Get information about an individual product
      * @param Product $product
      */
-    function getProduct(Product $product){}
+    function getProduct(Product $product){
+        $product->loadCommon();
+        return Response($product);
+    }
 
     /**
      * Get information about many products
      * @param Request $request
      */
-    function getProducts(Request $request){}
+    function getProducts(Request $request){
+        $products = new Product();
+        $products = $products->get();
+        $products->loadCommon();
+        return Response($products);
+    }
 
     /**
      * Add a new product to the database
