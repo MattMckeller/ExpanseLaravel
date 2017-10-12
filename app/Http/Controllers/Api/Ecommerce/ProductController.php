@@ -41,7 +41,22 @@ class ProductController extends ApiController
      * Add a new product to the database
      * @param Request $request
      */
-    function createProduct(Request $request){}
+    function createProduct(Request $request){
+        $productData = $request->input('product');
+        $product = new Product($productData);
+        $product->quantity_available = 1;
+        $product->save();
+        if(!empty($productData['images'])){
+            foreach($productData['images'] as $image) {
+                $productImage = new ProductImage();
+                $productImage = $productImage->find($image['id']);
+                $product->productImages()->save($productImage);
+            }
+        }
+
+        $product->load('productImages');
+        return Response($product, 200);
+    }
 
     /**
      * Edit an existing product
