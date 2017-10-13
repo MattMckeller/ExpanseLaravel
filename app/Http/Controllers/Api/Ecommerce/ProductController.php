@@ -41,7 +41,7 @@ class ProductController extends ApiController
     function getProducts(Request $request){
         $products = new Product();
         $products = $products->get();
-        $products->loadCommon();
+        $products->load('productImages');
         return Response($products);
     }
 
