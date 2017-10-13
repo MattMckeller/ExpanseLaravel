@@ -30,7 +30,7 @@ class ProductController extends ApiController
      * @param Product $product
      */
     function getProduct(Product $product){
-        $product->loadCommon();
+        $product->load('productImages');
         return Response($product);
     }
 
