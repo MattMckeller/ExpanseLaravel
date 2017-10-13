@@ -18,6 +18,4 @@
 Route::get('/', 'Home\HomeController@index');
 Route::get('', 'Home\HomeController@index');
 Route::get('/findBusinesses', 'Custom\FindBusinesses@find');
-Route::get('/findBusinessesTwo', 'Custom\FindBusinessesTwo@find');
-Route::get('/findBusinessesThree', 'Custom\FindBusinessesThree@find');
 Route::get('/foursquare-redirect', 'Custom\FindBusinesses@foursquareRedirect');

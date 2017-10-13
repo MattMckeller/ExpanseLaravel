@@ -30,18 +30,18 @@ Route::delete('/cart/removeProduct', 'Api\Ecommerce\CartController@removeProduct
 Route::delete('/cart/emptyCart', 'Api\Ecommerce\CartController@emptyCart');
 
 //Payment types
-Route::get('/paymentTypes/getPaymentType/{PaymentType}', 'Api\Ecommerce\PaymentTypesController@getPaymentType');
+Route::get('/paymentTypes/getPaymentType/{paymentType}', 'Api\Ecommerce\PaymentTypesController@getPaymentType');
 Route::get('/paymentTypes/getPaymentTypes', 'Api\Ecommerce\PaymentTypesController@getPaymentType');
 Route::post('/paymentTypes/addPaymentType', 'Api\Ecommerce\PaymentTypesController@addPaymentType');
 Route::post('/paymentTypes/editPaymentType', 'Api\Ecommerce\PaymentTypesController@editPaymentType');
 Route::delete('/paymentTypes/removePaymentType', 'Api\Ecommerce\PaymentTypesController@removePaymentType');
 
 //Products
-Route::get('/products/getProduct/{Product}', 'Api\Ecommerce\ProductController@getProduct');
+Route::get('/products/getProduct/{product}', 'Api\Ecommerce\ProductController@getProduct');
 Route::get('/products/getProducts', 'Api\Ecommerce\ProductController@getProducts');
 Route::post('/products/createProduct', 'Api\Ecommerce\ProductController@createProduct');
-Route::post('/products/editProduct/{Product}', 'Api\Ecommerce\ProductController@editProduct');
-Route::delete('/products/removeProduct/{Product}', 'Api\Ecommerce\ProductController@removeProduct');
+Route::post('/products/editProduct/{product}', 'Api\Ecommerce\ProductController@editProduct');
+Route::delete('/products/removeProduct/{product}', 'Api\Ecommerce\ProductController@removeProduct');
 Route::post('/products/setPrimaryImage', 'Api\Ecommerce\ProductController@setPrimaryImage');
 Route::post('/products/updateImageOrder', 'Api\Ecommerce\ProductController@updateImageOrder');
 
@@ -52,8 +52,8 @@ Route::post('/productImages/editImage', 'Api\Ecommerce\ProductImageController@ed
 Route::delete('/productImages/removeImage/{ProductImage}', 'Api\Ecommerce\ProductImageController@removeImage');
 
 //Shipping Options
-Route::get('/shipping/getOption/{ShippingOption}', 'Api\Ecommerce\ShippingOptionsController@getOption');
+Route::get('/shipping/getOption/{shippingOption}', 'Api\Ecommerce\ShippingOptionsController@getOption');
 Route::get('/shipping/getOptions', 'Api\Ecommerce\ShippingOptionsController@getOptions');
 Route::post('/shipping/addOption', 'Api\Ecommerce\ShippingOptionsController@addOption');
-Route::post('/shipping/editOption/{ShippingOption}', 'Api\Ecommerce\ShippingOptionsController@editOption');
+Route::post('/shipping/editOption/{shippingOption}', 'Api\Ecommerce\ShippingOptionsController@editOption');
 Route::delete('/shipping/removeOption', 'Api\Ecommerce\ShippingOptionsController@removeOption');
