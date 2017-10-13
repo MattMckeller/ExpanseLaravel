@@ -23,6 +23,10 @@ class Product extends Model
         'display'
     ];
 
+    protected $casts = [
+        'price' => 'float'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
