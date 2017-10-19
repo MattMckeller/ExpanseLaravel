@@ -46,7 +46,7 @@ Route::post('/products/setPrimaryImage', 'Api\Ecommerce\ProductController@setPri
 Route::post('/products/updateImageOrder', 'Api\Ecommerce\ProductController@updateImageOrder');
 
 //Product Images
-Route::get('/productImages/getImage', 'Api\Ecommerce\ProductImageController@getImage');
+Route::get('/productImages/getImage/{productImage}', 'Api\Ecommerce\ProductImageController@getImage');
 Route::post('/productImages/addImage', 'Api\Ecommerce\ProductImageController@addImage');
 Route::post('/productImages/editImage', 'Api\Ecommerce\ProductImageController@editImage');
 Route::delete('/productImages/removeImage/{ProductImage}', 'Api\Ecommerce\ProductImageController@removeImage');

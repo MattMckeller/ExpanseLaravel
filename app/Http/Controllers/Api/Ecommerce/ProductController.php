@@ -31,7 +31,7 @@ class ProductController extends ApiController
      */
     function getProduct(Product $product){
         $product->load('productImages');
-        return Response($product);
+        return Response($product, 200);
     }
 
     /**
