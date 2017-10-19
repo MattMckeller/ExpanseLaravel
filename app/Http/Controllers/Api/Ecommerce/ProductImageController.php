@@ -11,7 +11,9 @@ use App\Models\Ecommerce\Product;
 use App\Models\Ecommerce\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
 
 use App\Http\Controllers\Api\ApiController;
 
@@ -29,12 +31,13 @@ class ProductImageController extends ApiController
      * @param Request $request
      * @return file
      */
-    function getImage(Request $request){
-        $requestedImage = $request->input('image');
-        $productImage = new ProductImage();
-        $productImage = $productImage->where('image', $requestedImage)->first();
-        //todo actually return the image not the object
-        return $productImage;
+    function getImage(ProductImage $productImage){
+        $image = null;
+        if($productImage->exists) {
+            $image = Storage::get($productImage->image);
+        }
+        $mimeType = Storage::mimeType($productImage->image);
+        return Response($image)->header('Content-Type', $mimeType);
     }
 
     /**
