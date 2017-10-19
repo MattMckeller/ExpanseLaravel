@@ -54,8 +54,8 @@ class ProductController extends ApiController
         $product = new Product($productData);
         $product->quantity_available = 1;
         $product->save();
-        if(!empty($productData['images'])){
-            foreach($productData['images'] as $image) {
+        if(!empty($productData['product_images'])){
+            foreach($productData['product_images'] as $image) {
                 $productImage = new ProductImage();
                 $productImage = $productImage->find($image['id']);
                 $product->productImages()->save($productImage);
@@ -70,7 +70,24 @@ class ProductController extends ApiController
      * Edit an existing product
      * @param Product $product
      */
-    function editProduct(Product $product){}
+    function editProduct(Product $product, Request $request){
+        $productData = $request->input('product');
+        $editedProduct = new Product($productData);
+        // Quantity cannot be edited
+        $editedProduct->name = $request->input('product.name', $product->name);
+        $editedProduct->price = $request->input('product.price', $product->price);
+        $editedProduct->save();
+        if(!empty($productData['product_images'])){
+            foreach($productData['product_images'] as $image) {
+                $productImage = new ProductImage();
+                $productImage = $productImage->find($image['id']);
+                $product->productImages()->save($productImage);
+            }
+        }
+
+        $product->load('productImages');
+        return Response($product, 200);
+    }
 
     /**
      * Soft delete an existing product
