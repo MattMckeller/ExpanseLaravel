@@ -27,17 +27,12 @@ class ProductImageController extends ApiController
     );
 
     /**
-     * Returns the requested image from storage
-     * @param Request $request
-     * @return file
+     * Returns the requested product image object
+     * @param ProductImage $productImage
+     * @return ProductImage
      */
     function getImage(ProductImage $productImage){
-        $image = null;
-        if($productImage->exists) {
-            $image = Storage::get($productImage->image);
-        }
-        $mimeType = Storage::mimeType($productImage->image);
-        return Response($image)->header('Content-Type', $mimeType);
+        return Response($productImage, 200);
     }
 
     /**
@@ -46,9 +41,10 @@ class ProductImageController extends ApiController
      * @return ProductImage
      */
     function addImage(Request $request){
-        $path = $request->file->store('productImages');
+        $path = $request->file->store(public_path().'/imgs/productImages');
+        $relativePath = str_replace(ltrim(public_path(),'/'), '', $path);
         $productImage = new ProductImage([
-            'image'=>$path
+            'image'=>$relativePath
         ]);
         $productImage->save();
         return $productImage;
