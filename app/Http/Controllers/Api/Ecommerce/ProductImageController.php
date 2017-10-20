@@ -41,10 +41,10 @@ class ProductImageController extends ApiController
      * @return ProductImage
      */
     function addImage(Request $request){
-        $path = $request->file->store(public_path().'/imgs/productImages');
-        $relativePath = str_replace(ltrim(public_path(),'/'), '', $path);
+        $path = $request->file->store('imgs/productImages', 'public');
+        $path = 'storage/'.$path;
         $productImage = new ProductImage([
-            'image'=>$relativePath
+            'image'=>$path
         ]);
         $productImage->save();
         return $productImage;
