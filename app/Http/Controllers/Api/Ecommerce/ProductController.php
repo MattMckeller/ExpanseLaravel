@@ -71,17 +71,18 @@ class ProductController extends ApiController
      * @param Product $product
      */
     function editProduct(Product $product, Request $request){
-        $productData = $request->input('product');
-        $editedProduct = new Product($productData);
+        $editedProduct = Product::findOrFail($product->id);
         // Quantity cannot be edited
+        $editedProduct->id = $request->input('product.id', $product->id);
         $editedProduct->name = $request->input('product.name', $product->name);
         $editedProduct->price = $request->input('product.price', $product->price);
+        $editedProduct->description = $request->input('product.description', $product->description);
         $editedProduct->save();
         if(!empty($productData['product_images'])){
             foreach($productData['product_images'] as $image) {
                 $productImage = new ProductImage();
                 $productImage = $productImage->find($image['id']);
-                $product->productImages()->save($productImage);
+                $editedProduct->productImages()->save($productImage);
             }
         }
 
