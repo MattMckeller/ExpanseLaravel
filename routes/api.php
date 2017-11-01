@@ -49,7 +49,7 @@ Route::post('/products/updateImageOrder', 'Api\Ecommerce\ProductController@updat
 Route::get('/productImages/getImage/{productImage}', 'Api\Ecommerce\ProductImageController@getImage');
 Route::post('/productImages/addImage', 'Api\Ecommerce\ProductImageController@addImage');
 Route::post('/productImages/editImage', 'Api\Ecommerce\ProductImageController@editImage');
-Route::delete('/productImages/removeImage/{ProductImage}', 'Api\Ecommerce\ProductImageController@removeImage');
+Route::delete('/productImages/removeImage/{productImage}', 'Api\Ecommerce\ProductImageController@removeImage');
 
 //Shipping Options
 Route::get('/shipping/getOption/{shippingOption}', 'Api\Ecommerce\ShippingOptionsController@getOption');
