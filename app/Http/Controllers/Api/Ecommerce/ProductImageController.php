@@ -52,9 +52,14 @@ class ProductImageController extends ApiController
 
     /**
      * Removes an image from a product
-     * @param Request $request -- ProductImage + Product
+     * @param ProductImage $productImage -- ProductImage
+     * @return boolean
      */
-    function removeImage(Request $request){}
+    function removeImage(ProductImage $productImage){
+        $productImage->product_id = null;
+        $productImage->save();
+        return Response($productImage, 200);
+    }
 
     /**
      * Edit an image's data
