@@ -21,7 +21,7 @@ class CheckoutController extends Controller
     }
 
     public function checkout(Request $request) {
-        pretty_print_r($request->all());
+//        pretty_print_r($request->all());
         $inputData = $request->all();
         \Stripe\Stripe::setApiKey(config('stripe.apiKey'));
         $cost = $this->calculateTotal($inputData['products'], $inputData['shippingSelection']);
