@@ -78,8 +78,11 @@ class ProductController extends ApiController
         $editedProduct->price = $request->input('product.price', $product->price);
         $editedProduct->description = $request->input('product.description', $product->description);
         $editedProduct->save();
-        if(!empty($productData['product_images'])){
-            foreach($productData['product_images'] as $image) {
+
+
+        $editedImages = $request->input('product.product_images', false);
+        if(!empty($editedImages)){
+            foreach($editedImages as $image) {
                 $productImage = new ProductImage();
                 $productImage = $productImage->find($image['id']);
                 $editedProduct->productImages()->save($productImage);
