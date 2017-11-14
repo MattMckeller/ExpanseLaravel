@@ -97,7 +97,12 @@ class ProductController extends ApiController
      * Soft delete an existing product
      * @param Product $product
      */
-    function removeProduct(Product $product){}
+    function removeProduct(Product $product){
+        $productToDelete = Product::findOrFail($product->id);
+        $success = $productToDelete->delete();
+
+        return Response(array('success'=>$success), 200);
+    }
 
     /**
      * Set an existing image as the primary image for a product.
